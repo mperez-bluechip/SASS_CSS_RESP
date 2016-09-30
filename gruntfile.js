@@ -10,8 +10,11 @@ module.exports = function(grunt) {
          }//my_target
       },//uglify
       watch: {
+          options: {  livereload: true },
+          scripts: {
           files: ['_/components/js/*.js'],
           tasks: ['uglify']
+          }
       }//watch
     });//initConfig
     grunt.registerTask('default', 'watch');
