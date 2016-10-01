@@ -14,7 +14,7 @@ $large                : 75em;
 //Content ------------------------------------
 .layout {
   @include container;
-  padding: 3%;
+  padding: 0 3%;
 
   //Primary ------------------------------------
   .primary {
@@ -73,6 +73,7 @@ header {
   .hero {
     width: 100%;
     @include at-breakpoint($medium) {
+      @include single-transition(all, 1s, ease-out);
       position: relative;
       display: block;
       width: 100%;
@@ -100,6 +101,9 @@ header {
 .navigation {
   background: lighten($darkblue, 15);
   ul.nav {
+    @include at-breakpoint($small) {
+      @include horizontal-list;
+    }
     li {
       i {
         color: lighten($yellow, 20);
@@ -107,14 +111,117 @@ header {
       } //icons
 
       a {
+        @include single-transition(all, .5s, ease-out);
         display: block;
         text-decoration: none;
         padding: 5px 10px;
         color: $paleryellow;
+
+        &:hover {
+          background: $orange;
+          a {
+            color: lighten($yellow, 30);
+          }
+        }
+
+
       } //a
     } //li
   } //ul.nav
 } // navigation
+
+//Speakers List --------------------------------
+.speakerslist {
+  img {
+    @include border-radius;
+    width: 120px;
+    float: left;
+    margin: {
+      right: 10px;
+      bottom: 10px;
+    } //margin
+  } //img
+
+  i {
+    padding-right: 15px;
+  }
+
+  @include at-breakpoint($medium) {
+    text-align: center;
+    @include background(linear-gradient(top, lighten($darkblue, 3), $darkerblue));
+    color: rgba($paleyellow, .5);
+    overflow: hidden;
+    padding-bottom: 10px;
+    #{headings()} {
+      text-shadow: none;
+      border-bottom: none !important;
+    } //headings
+
+    h1 {
+      color: $green;
+      font-size: 2.6rem;
+      line-height: 1em;
+      @include at-breakpoint($large) {
+        font-size: 4rem;
+        line-height: 1em;
+      } //large
+    } //h1
+
+    h3 {
+      color: lighten($yellow, 10);
+      line-height: .9rem;
+    } //h3
+
+    .small {
+      padding-top: .4em !important;
+      line-height: 1em;
+      color: lighten($darkblue, 30);
+      a {
+        color: lighten($darkblue, 30);
+        text-decoration: none;
+        &:hover {
+          text-decoration: underline;
+        } //hover
+      } //a
+    } //small
+
+    img.speaker {
+      float: none;
+      width: 40%;
+      max-width: 170px;
+      margin: 0 auto;
+      @include border-radius(50%);
+    }
+
+    .small {
+      display: block;
+    }
+
+    p:nth-of-type(2) {
+      font-weight: 200 !important;
+      text-align: left;
+      font-size: .8em;
+      line-height: 0;
+      @include single-transition(all, .3s, ease-out);
+      opacity: 0;
+    }
+
+    &:hover {
+      p:nth-of-type(2) {
+        line-height: 1.5em;
+        opacity: 1;
+      }
+    }
+
+    .artist {
+      @include span-columns(4,12);
+    }
+
+    .artist:nth-of-type(3) {
+      @include span-columns(4 omega, 12);
+    }
+  } //medium
+} // speakerslist
 
 //footer ------------------------------------
 footer {
