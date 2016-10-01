@@ -11,11 +11,12 @@ $medium               : 47em;
 $large                : 75em;
 
 
-//Content
+//Content ------------------------------------
 .layout {
   @include container;
   padding: 3%;
 
+  //Primary ------------------------------------
   .primary {
     margin-top: .2em;
     @include at-breakpoint($medium) {
@@ -44,7 +45,18 @@ $large                : 75em;
 
     } //medium layout
   } //primary
-  
+
+  //Secondary ------------------------------------
+  .secondary {
+    @include at-breakpoint($medium) {
+      @include span-columns(4 omega, 12);
+      font-size: 1.1rem;
+      h1 {
+        font-size: 1.8rem;
+        color: $orange;
+      }
+    }
+  }
 
 } //Content layout
 

@@ -39,7 +39,7 @@ h3 {
 
 a {
   text-decoration: underline;
-  color: mediumgray;
+  color: $mediumgray;
   &:hover {
     color: $orange;
   }
