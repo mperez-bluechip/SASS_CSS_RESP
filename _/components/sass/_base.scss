@@ -1,7 +1,6 @@
-@import url('http://fonts.googleapis.com/css?family=Bree+Serif|Merriweather:400,300,700,900');
+@import url('http://fonts.googleapis.com/css?family=Bree+Serif|Merriweather');
 @import url('http://netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css');
 
-// body  ------------------------------------
 body {
   font-family: $font-primary;
   font-size: 1.2rem;
@@ -22,10 +21,10 @@ h1 {
   color: lighten($darkblue, 25);
   margin-bottom: .4rem;
   border-bottom: 1px solid $lightgray;
-  padding-top:10px;
+  padding-top: 10px;
 }
 
-h2 { 
+h2 {
   font-size: 1.5rem;
   line-height: 100%;
   margin: 20px 0 0 0;
@@ -40,7 +39,7 @@ h3 {
 
 a {
   text-decoration: underline;
-  color: $mediumgray;
+  color: mediumgray;
   &:hover {
     color: $orange;
   }
